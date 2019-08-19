@@ -120,6 +120,242 @@
           }
         }
       }
+    },
+    "pierian": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/pierian",
+      "sourceRoot": "projects/pierian/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/pierian",
+            "index": "projects/pierian/src/index.html",
+            "main": "projects/pierian/src/main.ts",
+            "polyfills": "projects/pierian/src/polyfills.ts",
+            "tsConfig": "projects/pierian/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/pierian/src/favicon.ico",
+              "projects/pierian/src/assets"
+            ],
+            "styles": [
+              "projects/pierian/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/pierian/src/environments/environment.ts",
+                  "with": "projects/pierian/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "pierian:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "pierian:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "pierian:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/pierian/src/test.ts",
+            "polyfills": "projects/pierian/src/polyfills.ts",
+            "tsConfig": "projects/pierian/tsconfig.spec.json",
+            "karmaConfig": "projects/pierian/karma.conf.js",
+            "assets": [
+              "projects/pierian/src/favicon.ico",
+              "projects/pierian/src/assets"
+            ],
+            "styles": [
+              "projects/pierian/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/pierian/tsconfig.app.json",
+              "projects/pierian/tsconfig.spec.json",
+              "projects/pierian/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/pierian/e2e/protractor.conf.js",
+            "devServerTarget": "pierian:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "pierian:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "pierian-demo": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/pierian-demo",
+      "sourceRoot": "projects/pierian-demo/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/pierian-demo",
+            "index": "projects/pierian-demo/src/index.html",
+            "main": "projects/pierian-demo/src/main.ts",
+            "polyfills": "projects/pierian-demo/src/polyfills.ts",
+            "tsConfig": "projects/pierian-demo/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/pierian-demo/src/favicon.ico",
+              "projects/pierian-demo/src/assets"
+            ],
+            "styles": [
+              "projects/pierian-demo/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/pierian-demo/src/environments/environment.ts",
+                  "with": "projects/pierian-demo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "pierian-demo:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "pierian-demo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "pierian-demo:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/pierian-demo/src/test.ts",
+            "polyfills": "projects/pierian-demo/src/polyfills.ts",
+            "tsConfig": "projects/pierian-demo/tsconfig.spec.json",
+            "karmaConfig": "projects/pierian-demo/karma.conf.js",
+            "assets": [
+              "projects/pierian-demo/src/favicon.ico",
+              "projects/pierian-demo/src/assets"
+            ],
+            "styles": [
+              "projects/pierian-demo/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/pierian-demo/tsconfig.app.json",
+              "projects/pierian-demo/tsconfig.spec.json",
+              "projects/pierian-demo/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/pierian-demo/e2e/protractor.conf.js",
+            "devServerTarget": "pierian-demo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "pierian-demo:serve:production"
+            }
+          }
+        }
+      }
     }},
   "defaultProject": "workspace"
 }
