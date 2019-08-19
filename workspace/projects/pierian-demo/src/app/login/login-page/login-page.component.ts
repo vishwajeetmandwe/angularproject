@@ -16,13 +16,10 @@ export class LoginPageComponent implements OnInit {
     console.log( `userName ${userName}, password ${password}`);
     
     if(userName == 'vish' && password == '123456'){
-      this.router.navigate(['signup'])
+      this.router.navigate(['home'])
     }
     else{
-      console.log(
-        'insert id nd password'
-      );
-      
+      console.log('insert id nd password');
     }
   }
 

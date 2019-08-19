@@ -1,17 +1,18 @@
+import { HomeModule } from './home/home.module';
+import { HomePageComponent } from './home/home-page/home-page.component';
 import { AppRoutingModule } from './../../../../../src/app/app-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginPageComponent } from './login-page/login-page.component';
-import { SingupPageComponent } from './singup-page/singup-page.component';
-
 
 
 @NgModule({
-  declarations: [LoginPageComponent, SingupPageComponent],
+  declarations: [LoginPageComponent],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HomeModule
   ],
-  exports: [LoginPageComponent, SingupPageComponent]
+  exports: [LoginPageComponent, HomePageComponent]
 })
 export class LoginModule { }

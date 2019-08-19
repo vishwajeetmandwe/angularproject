@@ -18,8 +18,9 @@
 />
 
 <!--Custom styles-->
-<!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
-<div class="container">
+<!-- <link rel="stylesheet" type="text/css" href="login-page.component.css"> -->
+
+<div class="container login-page">
   <div class="d-flex justify-content-center h-100">
     <div class="card">
       <div class="card-header">
@@ -51,17 +52,17 @@
           </div>
           <div class="form-group">
             <input
-              type="submit"
+              type="button"
               value="Login"
               class="btn float-right login_btn"
-              (click)="onLogin(username.value, password.value)"
+              (click)="onLogin(userName.value, password.value)"
             />
           </div>
         </form>
       </div>
       <div class="card-footer">
         <div class="d-flex justify-content-center links">
-          Don't have an account?<a class="nav-link" [routerLink]="['/signup']"
+          Don't have an account?<a [routerLink]="['signup']"
             >Sign Up</a
           >
 
@@ -71,5 +72,5 @@
     </div>
   </div>
 </div>
-<router-outlet></router-outlet>
 
+<router-outlet></router-outlet>
